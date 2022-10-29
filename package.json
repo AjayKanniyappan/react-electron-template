@@ -1,0 +1,20 @@
+{
+  "name": "react-electron-template",
+  "version": "1.0.0",
+  "description": "<h1 align='center'>Under Construction <img alt=\"GIF\" src=\"https://user-images.githubusercontent.com/114384910/198694482-fa74cb3d-2852-4b34-8126-8ac94a111234.gif\" width=\"30\" height=\"30\"/></h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/AjayKanniyappan/react-electron-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AjayKanniyappan/react-electron-template/issues"
+  },
+  "homepage": "https://github.com/AjayKanniyappan/react-electron-template#readme"
+}
