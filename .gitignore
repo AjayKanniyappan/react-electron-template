@@ -1,0 +1,6 @@
+# Dependency directories
+node_modules/
+
+# Temporary folders
+app/dist
+release/build
