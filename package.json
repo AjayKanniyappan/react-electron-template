@@ -19,6 +19,9 @@
   "author": "AJAY",
   "main": "index.js",
   "scripts": {
+    "clean": "node configs/clean.js --clean",
+    "clean:dist": "node configs/clean.js --dist",
+    "clean:build": "node configs/clean.js --build",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
@@ -28,6 +31,8 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
+    "chalk": "^4.1.2",
+    "detect-port": "^1.5.1",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
