@@ -1,0 +1,12 @@
+{
+  "name": "react-electron-template",
+  "version": "1.0.0",
+  "description": "A complete Electron Template for Production",
+  "license": "MIT",
+  "author": "AJAY",
+  "main": "./dist/main/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {}
+}

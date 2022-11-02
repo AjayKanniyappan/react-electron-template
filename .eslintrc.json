@@ -3,7 +3,16 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["airbnb", "airbnb-typescript", "airbnb/hooks", "prettier", "plugin:react/recommended", "plugin:import/typescript", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -16,18 +25,8 @@
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "object-curly-newline": "off",
-    //'array-element-newline': ['error', 'consistent'],
-    //'array-bracket-newline': ['error', 'consistent'],
-    "array-element-newline": [
-      "error",
-      {
-        "ArrayExpression": "consistent",
-        "ArrayPattern": {
-          "minItems": 3
-        }
-      }
-    ]
-    //"no-console": "off"
+    "object-curly-newline": "off"
+    //"no-console": "off" // TO AVOID CONSOLE ERRORS
+    //"array-element-newline":: ["error", "consistent"],
   }
 }
