@@ -1,12 +1,16 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import webpack from 'webpack';
 import path from 'path';
+import webpack from 'webpack';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 const Configuration: webpack.Configuration = {
   mode: 'production',
   devtool: 'source-map',
   target: 'electron-main',
-  entry: path.resolve(__dirname, '../src/main/main.ts'),
+  entry: {
+    main: path.join(__dirname, '../src/main/main.ts'),
+    preload: path.join(__dirname, '../src/main/preload.ts'),
+  },
   module: {
     rules: [
       {
@@ -31,6 +35,11 @@ const Configuration: webpack.Configuration = {
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, '../tsconfig.json'),
+      }),
+    ],
   },
   output: {
     path: path.join(__dirname, '../app/dist/main'),

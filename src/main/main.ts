@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 // import path from 'path';
 
 function createWindow() {
@@ -10,7 +10,7 @@ function createWindow() {
       // preload: path.join(__dirname, 'preload.js'),
     },
   });
-
+  ipcMain.handle('ping', () => 'pong');
   win.loadFile('src/renderer/index.html');
 }
 
