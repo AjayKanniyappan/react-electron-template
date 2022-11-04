@@ -14,12 +14,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2021",
-    "baseUrl": ".",
-    "paths": {
-      "Components/*": ["./src/renderer/Components/*"]
-    }
+    "target": "es2021"
   },
-  "include": ["assets", "configs", "src"],
-  "exclude": ["app/dist", "release/build"]
+  "extends": "./tsconfig.node.json"
 }
