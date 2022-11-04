@@ -1,0 +1,10 @@
+.center {
+  position: absolute;
+  width: 200px;
+  height: 60px;
+  left: 50%;
+  margin-left: -100px;
+  top: 50%;
+  margin-top: -30px;
+  text-align: center;
+}

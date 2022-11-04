@@ -62,6 +62,7 @@
     "detect-port": "^1.5.1",
     "electron": "^21.2.2",
     "electron-builder": "^23.6.0",
+    "electron-devtools-installer": "^3.2.0",
     "electronmon": "^2.0.2",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
