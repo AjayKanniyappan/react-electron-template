@@ -12,7 +12,7 @@ import 'webpack-dev-server';
 const Configuration: webpack.Configuration = {
   mode: 'development',
   devtool: 'inline-source-map',
-  target: 'electron-renderer',
+  target: ['web', 'electron-renderer'],
   stats: 'errors-only',
   entry: path.join(__dirname, '../src/renderer/index.tsx'),
   module: {
@@ -108,7 +108,6 @@ const Configuration: webpack.Configuration = {
   output: {
     path: path.join(__dirname, '../app/dist/renderer'),
     filename: '[name].js',
-    publicPath: './',
   },
   devServer: {
     port,

@@ -10,7 +10,7 @@ import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 const Configuration: webpack.Configuration = {
   mode: 'production',
   devtool: 'source-map',
-  target: 'electron-renderer',
+  target: ['web', 'electron-renderer'],
   stats: 'errors-only',
   entry: path.join(__dirname, '../src/renderer/index.tsx'),
   module: {
