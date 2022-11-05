@@ -1,7 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { app, BrowserWindow, Menu } from 'electron';
-import path from 'path';
-import { port } from '../../DevConfig.json';
+import getHtmlPath from './utils';
 
 Menu.setApplicationMenu(null);
 
@@ -33,12 +32,7 @@ function createWindow() {
     mainWindow.webContents.openDevTools();
   } // DEBUG BUILD
 
-  if (process.env.NODE_ENV !== 'development') {
-    mainWindow.loadURL(`file://${path.resolve(__dirname, '../renderer/index.html')}`);
-  } else {
-    mainWindow.loadURL(`http://localhost:${port}`);
-    mainWindow.webContents.openDevTools();
-  }
+  mainWindow.loadURL(getHtmlPath('index.html'));
 }
 
 app.whenReady().then(() => {
