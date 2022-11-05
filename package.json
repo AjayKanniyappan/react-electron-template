@@ -5,7 +5,8 @@
   "keywords": [
     "React",
     "Electron",
-    "Eslint"
+    "Eslint",
+    "Typescript"
   ],
   "homepage": "https://github.com/AjayKanniyappan/react-electron-template#readme",
   "repository": {
@@ -78,6 +79,7 @@
     "husky": "^8.0.1",
     "mini-css-extract-plugin": "^2.6.1",
     "prettier": "2.7.1",
+    "react-refresh": "^0.14.0",
     "sass": "^1.56.0",
     "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1",
@@ -91,8 +93,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "engines": {
-    "node": ">=15.x",
-    "npm": ">=7.x"
+    "node": ">=14.x",
+    "npm": ">=6.x"
   },
   "electronmon": {
     "patterns": [

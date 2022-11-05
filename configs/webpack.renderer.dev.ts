@@ -120,6 +120,9 @@ const Configuration: webpack.Configuration = {
     historyApiFallback: {
       verbose: true,
     },
+    client: {
+      logging: 'error',
+    },
     setupMiddlewares(middlewares) {
       const preloadProcess = spawn('npm', ['run', 'start:preload'], {
         shell: true,

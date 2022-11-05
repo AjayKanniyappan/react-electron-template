@@ -18,7 +18,7 @@ directories:
   buildResources: 'assets'
   output: 'release/build'
 
-# Windows configuration
+# Windows Configuration
 win:
   icon: './assets/icon.ico'
   target:
@@ -26,7 +26,7 @@ win:
     - 'nsis'
     # - 'appx' #For Windows Store build
 
-# Config for the windows installer
+# Configuration for the Windows Installer
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: false
@@ -34,15 +34,15 @@ nsis:
   uninstallerIcon: './assets/icon.ico'
   uninstallDisplayName: 'ReactElectron'
   license: './LICENSE'
-  # perMachine: true #Per machine config
+  # perMachine: true # Per Machine Configuration
 
-# Config for the windows Store build
-#appx:
-#identityName: 'yourApp'
-#publisher: 'yourName'
-#publisherDisplayName: 'yourName'
+# Config for the Windows Store Build
+# appx:
+# identityName: 'yourApp'
+# publisher: 'yourName'
+# publisherDisplayName: 'yourName'
 
-# Mac OS configuration
+# Mac OS Configuration
 mac:
   icon: './assets/icon.icns'
   target:
@@ -65,7 +65,7 @@ mas:
   entitlements: './assets/entitlements.mac.plist'
   entitlementsInherit: './assets/entitlements.mac.plist'
 
-# Config for OSX dmg
+# Configuration for OSX dmg
 dmg:
   contents:
     - x: 130
@@ -75,7 +75,7 @@ dmg:
       type: 'link'
       path: '/Applications'
 
-# Linux configuration
+# Linux Configuration
 linux:
   icon: './assets/icon.icns'
   target:
@@ -87,6 +87,6 @@ linux:
   category: Utility
 
 publish:
-  provider: 'generic'
+  provider: 'github'
   owner: 'AjayKanniyappan'
   repo: 'react-electron-template'
