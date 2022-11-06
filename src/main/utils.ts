@@ -24,13 +24,10 @@ function getHtmlPath(htmlFileName: string) {
 }
 
 function getPreloadPath(Name: string) {
-  if (process.env.NODE_ENV === 'production' && app.isPackaged === true) {
-    return path.resolve(__dirname, Name);
+  if (process.env.NODE_ENV === 'development') {
+    return path.resolve(__dirname, '../../app/dist/main', Name);
   }
-  if (process.env.NODE_ENV === 'production' && app.isPackaged === false) {
-    return path.resolve(__dirname, Name);
-  }
-  return path.resolve(__dirname, '../../app/dist/main', Name);
+  return path.resolve(__dirname, Name);
 }
 
 export { isDebug, getAssetsPath, getHtmlPath, getPreloadPath };
