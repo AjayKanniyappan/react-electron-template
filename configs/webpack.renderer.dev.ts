@@ -124,14 +124,6 @@ const Configuration: webpack.Configuration = {
       logging: 'error',
     },
     setupMiddlewares(middlewares) {
-      const preloadProcess = spawn('npm', ['run', 'start:preload'], {
-        shell: true,
-        stdio: 'inherit',
-      })
-        .on('close', (code: number) => process.exit(code))
-        // eslint-disable-next-line no-console
-        .on('error', (spawnError) => console.error(spawnError));
-
       // eslint-disable-next-line no-console
       console.log(`${chalk.whiteBright.bold('✨ Start')} ${chalk.green.bold('Hacking...👨‍💻')}`); // Electron is running...
       let args = ['run', 'start:main'];
@@ -143,7 +135,6 @@ const Configuration: webpack.Configuration = {
         stdio: 'inherit',
       })
         .on('close', (code: number) => {
-          preloadProcess.kill();
           process.exit(code);
         })
         // eslint-disable-next-line no-console

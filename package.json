@@ -17,7 +17,11 @@
     "url": "https://github.com/AjayKanniyappan/react-electron-template/issues"
   },
   "license": "MIT",
-  "author": "AJAY",
+  "author": {
+    "name": "Ajay Kanniyappan",
+    "email": "ajaykanniyappan@gmail.com",
+    "url": "https://ajaykanniyappan.com"
+  },
   "main": "./src/main/main.ts",
   "scripts": {
     "build:debug": "npm run clean:build && npm run debug && electron-builder build",
@@ -36,7 +40,7 @@
     "prod:debug": "npm run clean:dist && npm run debug && cd app && npm start",
     "prod": "npm run build && cd app && npm start",
     "start:main": "cross-env NODE_ENV=development ELECTRON_ENV=debug electronmon -r ts-node/register/transpile-only .",
-    "start:preload": "cross-env NODE_ENV=development ELECTRON_ENV=debug webpack --config configs/webpack.preload.dev.ts",
+    "start:preload": "npm run clean:dist && cross-env NODE_ENV=development ELECTRON_ENV=debug webpack --config configs/webpack.preload.dev.ts",
     "start:renderer": "cross-env NODE_ENV=development ELECTRON_ENV=debug webpack serve --config configs/webpack.renderer.dev.ts",
     "start": "ts-node configs/check-port.ts && concurrently \"npm run start:preload\" \"npm run start:renderer\""
   },

@@ -1,40 +1,38 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { app, BrowserWindow, Menu } from 'electron';
-import getHtmlPath from './utils';
-
-Menu.setApplicationMenu(null);
-
-const isDebug = process.env.ELECTRON_ENV === 'debug'; // DEBUG
-
-/* const getAssetPath = (icon: string) => {
-  if (process.env.NODE_ENV === 'production' && app.isPackaged === true) {
-    return path.join(process.resourcesPath, 'assets', icon);
-  }
-  if (process.env.NODE_ENV === 'production' && app.isPackaged === false) {
-    return path.join(__dirname, '../../../assets', icon);
-  }
-  return path.join(__dirname, '../../assets', icon);
-}; */
+import { app, BrowserWindow } from 'electron';
+import path from 'path';
+import { isDebug, getHtmlPath, getPreloadPath } from './utils';
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    // icon: getAssetPath('icon.ico'),
-    width: 800,
-    height: 600,
+    width: 1100,
+    height: 750,
     webPreferences: {
       devTools: isDebug,
       nodeIntegration: true,
-      contextIsolation: false,
+      preload: getPreloadPath('preload.js'),
     },
   });
 
-  if (isDebug === true) {
-    mainWindow.webContents.openDevTools();
-  } // DEBUG BUILD
-
   mainWindow.loadURL(getHtmlPath('index.html'));
+
+  if (isDebug) {
+    mainWindow.webContents.openDevTools();
+  }
 }
 
 app.whenReady().then(() => {
   createWindow();
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
+    }
+  });
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });

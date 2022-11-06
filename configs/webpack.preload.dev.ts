@@ -42,7 +42,7 @@ const Configuration: webpack.Configuration = {
   },
   output: {
     path: path.join(__dirname, '../app/dist/main'),
-    filename: '[name].js',
+    filename: 'preload.js',
   },
   watch: true,
 };
