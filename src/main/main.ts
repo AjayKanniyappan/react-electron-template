@@ -1,48 +1,44 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { app, BrowserWindow, ipcMain, shell } from 'electron';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import installExtension, {
-  REACT_DEVELOPER_TOOLS,
-  REDUX_DEVTOOLS,
-} from 'electron-devtools-installer';
-import { isDebug, /* getAssetsPath, */ getHtmlPath, getPreloadPath } from './utils';
-
-// Menu.setApplicationMenu(null);
+import { app, BrowserWindow, ipcMain, Menu, shell } from 'electron';
+import { autoUpdater } from 'electron-updater';
+import { isDebug, getAssetsPath, getHtmlPath, getPreloadPath, installExtensions } from './utils';
+import menu from './menu';
+import './updater';
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    // icon: getAssetsPath('icon.ico'),
+    icon: getAssetsPath('icon.ico'),
     width: 1100,
     height: 750,
     webPreferences: {
       devTools: isDebug,
-      nodeIntegration: true,
       preload: getPreloadPath('preload.js'),
+      // nodeIntegration: true, // NODE.JS WILL AVAILABLE IN RENDERER
     },
   });
 
   mainWindow.loadURL(getHtmlPath('index.html'));
 
-  if (isDebug) {
-    mainWindow.webContents.openDevTools();
-    const extensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS];
-    extensions.forEach((Name) => {
-      installExtension(Name)
-        // eslint-disable-next-line no-console
-        .then((name) => console.log(`Added Extension: ${name}`))
-        // eslint-disable-next-line no-console
-        .catch((err) => console.log('An error occurred: ', err));
-    });
-  } // DEBUG DEVTOOLS
+  /* MENU BUILDER */
+  Menu.setApplicationMenu(menu);
 
-  /* URLs OPEN IN BROWSER */
+  /* AUTO UPDATER INVOKE */
+  autoUpdater.checkForUpdatesAndNotify();
+
+  /* DEBUG DEVTOOLS */
+  if (isDebug) {
+    mainWindow.webContents.openDevTools(); // ELECTRON DEVTOOLS
+    installExtensions(); // REACT DEVTOOLS INSTALLER
+  }
+
+  /* URLs OPEN IN DEFAULT BROWSER */
   mainWindow.webContents.setWindowOpenHandler((data) => {
     shell.openExternal(data.url);
     return { action: 'deny' };
   });
 }
 
-/* IPC EVENTS */
+/* IPC EVENTS EXAMPLE */
 ipcMain.on('message', (event, arg) => {
   // eslint-disable-next-line no-console
   console.log(`IPC Example: ${arg}`);

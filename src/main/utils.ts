@@ -1,5 +1,9 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 import { app } from 'electron';
+import installExtension, {
+  REACT_DEVELOPER_TOOLS,
+  REDUX_DEVTOOLS,
+} from 'electron-devtools-installer';
 import path from 'path';
 import { port } from '../../DevConfig.json';
 
@@ -30,4 +34,14 @@ function getPreloadPath(Name: string) {
   return path.resolve(__dirname, Name);
 }
 
-export { isDebug, getAssetsPath, getHtmlPath, getPreloadPath };
+function installExtensions() {
+  const extensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS];
+  extensions.forEach((Name) => {
+    installExtension(Name) // eslint-disable-next-line no-console
+      .then((name) => console.log(`${name} Extension Added`))
+      // eslint-disable-next-line no-console
+      .catch((err) => console.log('An error occurred: ', err));
+  });
+}
+
+export { isDebug, getAssetsPath, getHtmlPath, getPreloadPath, installExtensions };
