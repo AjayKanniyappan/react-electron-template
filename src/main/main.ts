@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { app, BrowserWindow, ipcMain, Menu, shell } from 'electron';
 import { autoUpdater } from 'electron-updater';
+import Store from 'electron-store';
 import { isDebug, getAssetsPath, getHtmlPath, getPreloadPath, installExtensions } from './utils';
 import menu from './menu';
 import './updater';
@@ -42,7 +43,21 @@ function createWindow() {
 ipcMain.on('message', (event, arg) => {
   // eslint-disable-next-line no-console
   console.log(`IPC Example: ${arg}`);
-  event.reply('reply', 'Ipc Example pong');
+  event.reply('reply', 'Ipc Example:  pong 🏓');
+});
+
+/** ELECTRON STORE EXAMPLE
+ *  NOTE: LOCAL STORAGE FOR YOUR APPLICATION
+ */
+const store = new Store();
+ipcMain.on('set', (_event, key, val) => {
+  // eslint-disable-next-line no-console
+  console.log(`Electron Store Example: key: ${key} value: ${val}`);
+  store.set(key, val);
+});
+ipcMain.on('get', (event, val) => {
+  // eslint-disable-next-line no-param-reassign
+  event.returnValue = store.get(val);
 });
 
 app.whenReady().then(() => {

@@ -2,6 +2,7 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
 contextBridge.exposeInMainWorld('ipc', {
+  /*  ELECTRON IPC APIs */
   send(channel: string, args: unknown) {
     ipcRenderer.send(channel, args);
   },
@@ -9,5 +10,12 @@ contextBridge.exposeInMainWorld('ipc', {
     ipcRenderer.once(channel, (_event, ...args) => {
       callBack(...args);
     });
+  },
+  /* ELECTRON STORE APIs */
+  set(key: string, val: unknown) {
+    ipcRenderer.send('set', key, val);
+  },
+  get(key: string) {
+    return ipcRenderer.sendSync('get', key);
   },
 });
