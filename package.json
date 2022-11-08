@@ -1,12 +1,20 @@
 {
   "name": "react-electron-template",
   "version": "1.0.0",
-  "description": "A complete Electron Template for Production",
+  "description": "The Complete Electron, React Template for Robust Multi-Platform Apps in Production",
   "keywords": [
     "React",
     "Electron",
+    "Typescript",
+    "JavaScript",
+    "Html",
+    "Css",
+    "Sass",
+    "Webpack",
     "Eslint",
-    "Typescript"
+    "Prettier",
+    "Hot reload",
+    "Vscode debug"
   ],
   "homepage": "https://github.com/AjayKanniyappan/react-electron-template#readme",
   "repository": {

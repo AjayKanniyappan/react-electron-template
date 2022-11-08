@@ -52,7 +52,7 @@ ipcMain.on('message', (event, arg) => {
 const store = new Store();
 ipcMain.on('set', (_event, key, val) => {
   // eslint-disable-next-line no-console
-  console.log(`Electron Store Example: key: ${key} value: ${val}`);
+  console.log(`Electron Store Example: key: ${key}, value: ${val}`);
   store.set(key, val);
 });
 ipcMain.on('get', (event, val) => {
