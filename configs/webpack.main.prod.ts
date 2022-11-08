@@ -6,7 +6,7 @@ import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 const Configuration: webpack.Configuration = {
   mode: 'production',
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   target: 'electron-main',
   stats: 'errors-only',
   entry: {
