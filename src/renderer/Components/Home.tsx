@@ -16,21 +16,25 @@ function Home() {
           <img className="App-Logo" src={reactLogo} alt="React Logo" />
         </a>
       </header>
-      <section>
-        <p>Welcome to</p>
-        <div>React Electron Template!</div>
-        <a
-          href="https://github.com/AjayKanniyappan/react-electron-template#readme"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button type="button">📖 Read our docs</button>
-        </a>
-        <a href="https://www.buymeacoffee.com/ajaykanniyappan">
-          <button type="button">
-            <img className="logo" src={bmc} alt="buy" /> Buy me a coffee
-          </button>
-        </a>
+      <section className="Content">
+        <h1>Welcome to</h1>
+        <h2>React Electron Template!</h2>
+        <div className="Link">
+          <a
+            href="https://github.com/AjayKanniyappan/react-electron-template#readme"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button type="button" className="White-Button">
+              📖 Read our docs
+            </button>
+          </a>
+          <a href="https://www.buymeacoffee.com/ajaykanniyappan" target="_blank" rel="noreferrer">
+            <button type="button" className="Bmc-Button">
+              <img className="Bmc-Logo" src={bmc} alt="Buy me a coffee" /> Buy me a coffee
+            </button>
+          </a>
+        </div>
       </section>
       <footer className="footer">
         <a href="https://ajaykanniyappan.com" target="_blank" rel="noopener noreferrer">
