@@ -42,12 +42,20 @@ NOTE: This project requires NodeJS (version 14 or later) and NPM.
 - [Prerequisites](#%EF%B8%8F-prerequisites)
 - [Table of contents](#-table-of-contents)
 - [Features](#-features)
-- [Getting Started](#getting-started)
-- [Installation](#Installation)
-- [Development](#Development)
-- [Production](#Production)
-- [Distribution](#Distribution)
-  - [Build](#build)
+- [Getting Started](#%EF%B8%8F-getting-started)
+- [Directory Structure](#-directory-structure)
+- [Quick Start](#-quick-start)
+  - [Cloning The GitHub Repository](#-cloning-the-github-repository)
+  - [Downloading The Repository Zip File](#%EF%B8%8F-downloading-the-repository-zip-file)
+  - [Quick Install](#-quick-install)
+- [Starting Development](#-starting-development)
+  - [Vscode Debug](#-Vscode-Debug)
+- [Packaging for Production](#-production)
+  - [Running in Production mode](#-quick-install)
+- [Building a distribution version](#-distribution)
+  - [Windows](#-quick-install)
+  - [Mac](#-quick-install)
+  - [Linux](#-quick-install)
 - [Built With](#%EF%B8%8F-built-with)
 - [Contributing](#-contributing)
 - [Show your support](#-show-your-support)
@@ -68,19 +76,107 @@ NOTE: This project requires NodeJS (version 14 or later) and NPM.
 
 ## 🏃‍♂️ Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project and running on your local machine for development and testing purposes. See Distribution for notes on how to Package the Application for Desktop.
 
-## 🧰 Installation
+## 📂 Directory Structure
+
+**React Electron Template** files and folder structure.
+
+```diff
++├── .husky                       Automate your git commits
++├── .vscode                      vscode debug folder and extension support
++├── app                          Your application Build folder
+ │   ├── dist                     Your generated source code folder
++│   └── package.json             Your runnable application package.json (If you want native node module you need to add here)
+ │
++├── assets                       Project assets folder
+ │   ├── icons                    Icon sets folder
+ │   │  └── NxN.png               Different pixel png's
+ │   ├── icon.icns                Icon for the application on macOS and Linux
+ │   └── icon.ico                 Icon for the application
+ │
++├── configs                      configuration folder
+ │
++├── release                      your application release folder
++│   └── build                    Generated after production build, contains executables
+ │       ├── {os}-unpacked        Contains unpacked application executable
+ │       └── Setup.{ext}          Installer for the application
+ │
++├── src                          Source code folder
++│   ├── main                     Electron related code
+ │   │   ├── main.ts              Main process source code
+ │   │   └── preload.ts           Preload scripts source code
+ │   │
++│   └── renderer                 Renderer source code, your React application
+ │        ├── App.tsx             React router source code
+ │        └── index.tsx           React index source code
+ │
+ ├── .eslintrc.json               Eslint configuration
+ ├── .prettierrc                  prettier code formatter
++├── DevConfig.json               React development port
++├── electron-builder.yml         Electron builder configuration
++├── package.json                 Package.json for development
+ ├── tsconfig.json                TypeScript Configuration
++└── tsconfig.node.json           TypeScript paths
+```
+
+## 🛫 Quick Start
+
+There are several ways you can get the React Electron Template:
+
+### 🌀 Cloning The GitHub Repository
+
+The recommended way to get React Electron Template is to use git to directly clone the repository:
+
+```bash
+# Clone the project
+git clone https://github.com/AjayKanniyappan/react-electron-template.git <your-project-name>
+
+# Enter the project directory
+cd <your-project-name>
+```
+
+This will clone the latest version of the React Electron Template repository to a **react-electron-template** folder.
+
+### 🗃️ Downloading The Repository Zip File
+
+Another way to use the React Electron Template is to download a zip copy from the [main branch on GitHub](https://github.com/AjayKanniyappan/react-electron-template/archive/refs/heads/main.zip). You can also do this using the `wget` command:
 
 ```sh
+wget https://github.com/AjayKanniyappan/react-electron-template/archive/refs/heads/main.zip -O react-electron-template-main.zip; unzip react-electron-template-main.zip; rm react-electron-template-main.zip
+```
+
+Don't forget to rename react-electron-template-main after your project name.
+
+### 🧰 Quick Install
+
+Once you've downloaded the Template and installed all the prerequisites, you're just a few steps away from starting to develop your Electron, React application.
+
+The Template comes pre-bundled with a `package.json` file that contain the list of modules you need to start your application.
+
+To install the dependencies, run this in the application folder from the command-line:
+
+```bash
+# Install dependency
 npm install
 ```
 
-## Running Your Application
+This command does a few things:
+
+- First it will install the dependencies needed for the application to run.
+- If you're running in a development environment, it will then also install development dependencies needed for testing and running your application.
+
+## 👨‍💻 Development
+
+### Running Your Application
 
 ```sh
 npm run start
 ```
+
+## ⚡ Production
+
+## 📦 Distribution
 
 ## 🏗️ Built With
 
