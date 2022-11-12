@@ -49,13 +49,19 @@ NOTE: This project requires NodeJS (version 14 or later) and NPM.
   - [Downloading The Repository Zip File](#%EF%B8%8F-downloading-the-repository-zip-file)
   - [Quick Install](#-quick-install)
 - [Starting Development](#-starting-development)
-  - [Vscode Debug](#-Vscode-Debug)
-- [Packaging for Production](#-production)
-  - [Running in Production mode](#-quick-install)
-- [Building a distribution version](#-distribution)
-  - [Windows](#-quick-install)
-  - [Mac](#-quick-install)
-  - [Linux](#-quick-install)
+  - [Running Your Application](#-running-your-application)
+  - [Vscode Debugging](#-vscode-debugging)
+  - [Style your Code](#-style-your-code)
+  - [Git Commits](#%EF%B8%8F-git-commits)
+  - [Clean Cache](#-clean-cache)
+- [Packaging for Production](#-packaging-for-production)
+  - [Running in Production mode](#%EF%B8%8F-running-in-production-mode)
+  - [Debugging in Production mode](#-debugging-in-production-mode)
+  - [Debugging in Release Build](#-debugging-in-release-build)
+- [Release a Distribution Version](#-release-a-distribution-version)
+  - [Build for Windows](#%EF%B8%8F-build-for-windows)
+  - [Build for macOS](#-build-for-macos)
+  - [Build for Linux](#-build-for-linux)
 - [Built With](#%EF%B8%8F-built-with)
 - [Contributing](#-contributing)
 - [Show your support](#-show-your-support)
@@ -161,22 +167,65 @@ To install the dependencies, run this in the application folder from the command
 npm install
 ```
 
+Or if you prefer using Yarn:
+
+```bash
+# Install dependency
+yarn add
+```
+
 This command does a few things:
 
 - First it will install the dependencies needed for the application to run.
 - If you're running in a development environment, it will then also install development dependencies needed for testing and running your application.
 
-## 👨‍💻 Development
+## 👨‍💻 Starting Development
 
-### Running Your Application
+Use your favorite JavaScript Package Managers **npm** or **yarn** or **pnpm**
+
+### 🏃 Running Your Application
+
+Run your application using npm:
 
 ```sh
-npm run start
+npm start
 ```
 
-## ⚡ Production
+Or if you prefer using Yarn:
 
-## 📦 Distribution
+```sh
+yarn start
+```
+
+<!-- Your application should run on port 5050 with the development environment configuration, so in your browser just go to http://localhost:3000
+
+That's it! Your application should be running. To proceed with your development, check the other sections in this documentation. If you encounter any problems, try the Troubleshooting section.
+
+Explore config/env/development.js for development environment configuration options. -->
+
+### 🆚 Vscode Debugging
+
+### 💈 Style your Code
+
+### 🛰️ Git Commits
+
+### 🧹 Clean Cache
+
+## ⚡ Packaging for Production
+
+### 🏃‍♂️ Running in Production mode
+
+### 🐞 Debugging in Production mode
+
+### 🐞 Debugging in Release Build
+
+## 📦 Release a Distribution Version
+
+### 🖥️ Build for Windows
+
+### 🍎 Build for macOS
+
+### 🐧 Build for Linux
 
 ## 🏗️ Built With
 
