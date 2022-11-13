@@ -50,10 +50,11 @@ NOTE: This project requires NodeJS (version 14 or later) and NPM.
   - [Quick Install](#-quick-install)
 - [Starting Development](#-starting-development)
   - [Running Your Application](#-running-your-application)
+  - [Change Port Number](#-change-port-number)
   - [Vscode Debugging](#-vscode-debugging)
+  - [Clean Cache](#-clean-cache)
   - [Style your Code](#-style-your-code)
   - [Git Commits](#%EF%B8%8F-git-commits)
-  - [Clean Cache](#-clean-cache)
 - [Packaging for Production](#-packaging-for-production)
   - [Running in Production mode](#%EF%B8%8F-running-in-production-mode)
   - [Debugging in Production mode](#-debugging-in-production-mode)
@@ -78,6 +79,7 @@ NOTE: This project requires NodeJS (version 14 or later) and NPM.
 - 📦 Packaging for Production
 - 🎯 Make Development simple
 - 💪 Eslint, Prettier and Airbnb make your code stronger
+- 💽 local Storage using **Electron-Store** and Auto updater using **Electron-Updater**
 - 🖥 Build your application for multi-platform
 
 ## 🏃‍♂️ Getting Started
@@ -185,7 +187,7 @@ Use your favorite JavaScript Package Managers **npm** or **yarn** or **pnpm**
 
 ### 🏃 Running Your Application
 
-Run your application using npm:
+**Run your application using npm:**
 
 ```sh
 npm start
@@ -197,35 +199,194 @@ Or if you prefer using Yarn:
 yarn start
 ```
 
-<!-- Your application should run on port 5050 with the development environment configuration, so in your browser just go to http://localhost:3000
+![image](https://user-images.githubusercontent.com/114384910/201516190-b19ef0e9-f14a-4344-811a-6d5ff99b2553.png)
 
-That's it! Your application should be running. To proceed with your development, check the other sections in this documentation. If you encounter any problems, try the Troubleshooting section.
+Your **React** application should run on port http://localhost:5050 on top of **Electron** with the development environment configuration.
 
-Explore config/env/development.js for development environment configuration options. -->
+Explore **configs/webpack.renderer.dev.ts** for development environment configuration options.
+
+### 🛬 Change Port Number
+
+If the localhost 5050 port number already in use! or if you like to change your **React application number.**
+
+Go to 👉 DevConfig.json and change the port number 5050 to **your-port-number**
+
+![Untitled-3](https://user-images.githubusercontent.com/114384910/201532119-77036145-9e32-41e7-87e5-d8b7c96ef34d.png)
 
 ### 🆚 Vscode Debugging
 
-### 💈 Style your Code
+This guide goes over how to start **VSCode debugging** your **React, Electron** Project.
 
-### 🛰️ Git Commits
+you can easily debug this [react-electron-template](https://github.com/AjayKanniyappan/react-electron-template).
+
+To bring up the Run and Debug view, select the Run and Debug icon in the Activity Bar on the side of VS Code. You can also use the keyboard shortcut `Ctrl+Shift+D`.
+
+![Untitled-3](https://user-images.githubusercontent.com/114384910/201532224-1cbf49e6-5511-4d42-82f0-319198ac0e5c.png)
+
+Click the button or press `F5` to start debugging
+
+**Electron main process Debugging**
+
+If you want to debug your **ElectronJS** code in Vscode, Go to Run and debug section or use the keyboard shortcut `Ctrl+Shift+D`.
+
+- Add break 🚧 points 🛑 in your code or files.
+- Click green button to run debug or press `F5` to start debugging.
+
+![Untitled-2](https://user-images.githubusercontent.com/114384910/201531822-138b6e5b-5b99-4b5d-ab55-25c637d82133.png)
+
+**Electron renderer process Debugging**
+
+If you want to debug your **ReactJS** also called renderer code in Vscode, Go to Run and debug section or use the keyboard shortcut `Ctrl+Shift+D`.
+
+- Add break 🚧 points 🛑 in your code or files.
+- Change the **Electron:main** to **Electron:renderer** to debug the renderer process.
+- Click green button to run debug or press `F5` to start debugging.
+
+![Untitled-4](https://user-images.githubusercontent.com/114384910/201532461-456fb0b1-e8fb-4528-a6d1-a68f310b469e.png)
+
+NOTE: First run **Electron:main** then only you can debug the **Electron:renderer** process.
 
 ### 🧹 Clean Cache
 
+If you want clean the cache files and node_modules cache run this below command 👇:
+
+```sh
+npm run clean
+```
+
+NOTE: It will remove your **node_module** folder, **build** files and **package-lock.json** files.
+
+Or if you prefer to clean only build files and folder run this below command 👇:
+
+```sh
+npm run clean:build
+```
+
+Or if you prefer to clean only dist files and folder run this below command 👇:
+
+```sh
+npm run clean:dist
+```
+
+### 💈 Style your Code
+
+The [React Electron Template](https://github.com/AjayKanniyappan/react-electron-template) has [Eslint](https://eslint.org/), [Prettier](https://prettier.io/) and [Airbnb](https://airbnb.io/javascript/react/) Configurations, this will help you to Style your code and syntax check and more.
+
+[Eslint](https://eslint.org/) will check syntax, find problems, and enforce code style of your code.
+
+[Prettier](https://prettier.io/) will format your code style.
+
+All you have to do is run this below command 👇:
+
+```sh
+npm run lint
+```
+
+NOTE: This command show you the warnings and errors in your code.
+
+### 🛰️ Git Commits
+
+Automate your [Git](https://git-scm.com/) commits using Husky, and don't commit or push the bad code in git.
+
+Husky improves your commits and more, You can use it to lint your commit messages, run tests, lint code, etc... when you commit or push. Husky supports [all Git hooks](https://git-scm.com/docs/githooks).
+
+Run below command 👇 to prepare Husky:
+
+```sh
+npm run prepare
+```
+
+See docs and more about [Husky](https://typicode.github.io/husky/#/?id=features).
+
+That's it! Your application should be running. To proceed with your development, check the other sections in this documentation. If you encounter any problems, Feel free to check [issues page](https://github.com/AjayKanniyappan/react-electron-template/issues).
+
 ## ⚡ Packaging for Production
+
+This documentation will teach you how to move your **Code** on **Production**.
 
 ### 🏃‍♂️ Running in Production mode
 
+To run your code on production mode run this command 👇:
+
+```sh
+npm run prod
+```
+
+NOTE: It will run both **Electron**, **React** code in production mode.
+
 ### 🐞 Debugging in Production mode
+
+If you need to debug your application on production mode run this 👇 command and it will show you the Electron **DevTools** for debugging.
+
+```sh
+npm run prod:debug
+```
+
+NOTE: Its only for testing purpose.
 
 ### 🐞 Debugging in Release Build
 
+If you want to test your executable or installer application, just run this 👇 command and it will show you the Electron **DevTools** for debugging.
+
+```sh
+npm run build:debug
+```
+
+NOTE: This is testing build only, don't move it for **Distribution**.
+
 ## 📦 Release a Distribution Version
+
+This guide will teach you how to build and distribute your application for **multi-platform**, It time to release your million dollar projects.
+
+**NOTE:** To avoid **Unknown publisher** error's you need to [Code Signing](https://www.venafi.com/education-center/code-signing/what-is-code-signing) on your project for more read this [Documentation .](https://www.electronjs.org/docs/latest/tutorial/distribution-overview)
 
 ### 🖥️ Build for Windows
 
+Once your app is ready for production or you completed a development process, To package and distribute your application for **Windows** Platform, you need to re-brand it. To do this below 👇:
+
+- Go to [electron-builder.yml](https://github.com/AjayKanniyappan/react-electron-template/blob/main/electron-builder.yml) change the name, appID, icon and what are the configuration you want.
+
+- Also change the [package.json](https://github.com/AjayKanniyappan/react-electron-template/blob/main/package.json) name, version and your what needs.
+
+- All you finish the process, you need to run this command 👇 it will make you the build for distribution file for Windows:
+
+```sh
+npm run make:win
+```
+
+NOTE: If you want to publish your application in [Windows Store](https://apps.microsoft.com/store/apps) kindly read this 🙏 [Documentation .](https://www.electronjs.org/docs/latest/tutorial/windows-store-guide)
+
 ### 🍎 Build for macOS
 
+Once your app is ready for production or you completed a development process, To package and distribute your application for **macOS** Platform, you need to re-brand it. To do this below 👇:
+
+- Go to [electron-builder.yml](https://github.com/AjayKanniyappan/react-electron-template/blob/main/electron-builder.yml) change the name, appID, icon and what are the configuration you want.
+
+- Also change the [package.json](https://github.com/AjayKanniyappan/react-electron-template/blob/main/package.json) name, version and your what needs.
+
+- All you finish the process, you need to run this command 👇 it will make you the build for distribution file for macOS:
+
+```sh
+npm run make:mac
+```
+
+NOTE: If you want to publish your application in [Mac App Store](https://www.apple.com/in/app-store/) kindly read this 🙏 [Documentation .](https://www.electronjs.org/docs/latest/tutorial/mac-app-store-submission-guide)
+
 ### 🐧 Build for Linux
+
+Once your app is ready for production or you completed a development process, To package and distribute your application for **Linux** Platform, you need to re-brand it. To do this below 👇:
+
+- Go to [electron-builder.yml](https://github.com/AjayKanniyappan/react-electron-template/blob/main/electron-builder.yml) change the name, appID, icon and what are the configuration you want.
+
+- Also change the [package.json](https://github.com/AjayKanniyappan/react-electron-template/blob/main/package.json) name, version and your what needs.
+
+- All you finish the process, you need to run this command 👇 it will make you the build for distribution file for Linux:
+
+```sh
+npm run make:linux
+```
+
+NOTE: If you want to publish your application in [Snapcraft](https://snapcraft.io/) kindly read this 🙏 [Documentation .](https://www.electronjs.org/docs/latest/tutorial/snapcraft)
 
 ## 🏗️ Built With
 
