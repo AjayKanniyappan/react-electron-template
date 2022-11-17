@@ -173,7 +173,7 @@ Or if you prefer using Yarn:
 
 ```bash
 # Install dependency
-yarn add
+yarn install
 ```
 
 This command does a few things:
