@@ -451,7 +451,7 @@ Donations will help us to ensure the following:
 - Website: https://ajaykanniyappan.com
 - Twitter: [@AjayKanniyappan](https://twitter.com/AjayKanniyappan)
 - Github: [AjayKanniyappan](https://github.com/AjayKanniyappan)
-- LinkedIn: [AjayKanniyappan](https://linkedin.com/in/AjayKanniyappan)
+- LinkedIn: [Ajay Kanniyappan](https://in.linkedin.com/in/ajaykanniyappan)
 
 ## ©️ License
 
