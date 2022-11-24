@@ -63,7 +63,7 @@ NOTE: This project requires NodeJS (version 14 or later) and NPM.
   - [Build for Windows](#%EF%B8%8F-build-for-windows)
   - [Build for macOS](#-build-for-macos)
   - [Build for Linux](#-build-for-linux)
-- [Built With](#%EF%B8%8F-built-with)
+- [Tech Used](#%EF%B8%8F-tech-used)
 - [Contributing](#-contributing)
 - [Show your support](#-show-your-support)
 - [Donate](#-donate)
@@ -388,35 +388,35 @@ npm run make:linux
 
 NOTE: If you want to publish your application in [Snapcraft](https://snapcraft.io/) kindly read this 🙏 [Documentation .](https://www.electronjs.org/docs/latest/tutorial/snapcraft)
 
-## 🏗️ Built With
+## 🏗️ Tech Used
 
-**React Electron Template Uses**
+**React Electron Template** Built With
 
-<p><img src="https://img.shields.io/badge/React%20-%2361DAFB.svg?&style=for-the-badge&logo=React&logoColor=white"/>
-<br/>
-<img src="https://img.shields.io/badge/React_Router%20-%23CA4245.svg?&style=for-the-badge&logo=React%20Router&logoColor=white"/> 
-<br/>
-<img src="https://img.shields.io/badge/Electron%20-%2347848F.svg?&style=for-the-badge&logo=Electron&logoColor=white"/>
-<br/>
-<img src="https://img.shields.io/badge/JavaScript%20-%23F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=white"/>
-<br/> 
-<img src="https://img.shields.io/badge/TypeScript%20-%233178C6.svg?&style=for-the-badge&logo=TypeScript&logoColor=white"/> 
-<br/>
-<img src="https://img.shields.io/badge/HTML5%20-%23E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/>   
-<br/>  
-<img src="https://img.shields.io/badge/CSS3%20-%231572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/>
-<br/> 
-<img src="https://img.shields.io/badge/Sass%20-%23CC6699.svg?&style=for-the-badge&logo=Sass&logoColor=white"/>
-<br/>
-<img src="https://img.shields.io/badge/Node.js%20-%23339933.svg?&style=for-the-badge&logo=Node.js&logoColor=white"/> 
-<br/> 
-<img src="https://img.shields.io/badge/Webpack%20-%238DD6F9.svg?&style=for-the-badge&logo=Webpack&logoColor=white"/>
-<br/> 
-<img src="https://img.shields.io/badge/Prettier%20-%23F7B93E.svg?&style=for-the-badge&logo=Prettier&logoColor=white"/> 
-<br/>  
-<img src="https://img.shields.io/badge/ESLint%20-%234B32C3.svg?&style=for-the-badge&logo=ESLint&logoColor=white"/>
-<br/>  
-<img src="https://img.shields.io/badge/Airbnb%20-%23FF5A5F.svg?&style=for-the-badge&logo=Airbnb&logoColor=white"/></p>
+- <img src="https://img.shields.io/badge/React%20-%2361DAFB.svg?&style=for-the-badge&logo=React&logoColor=white"/>
+  <br/>
+- <img src="https://img.shields.io/badge/React_Router%20-%23CA4245.svg?&style=for-the-badge&logo=React%20Router&logoColor=white"/> 
+  <br/>
+- <img src="https://img.shields.io/badge/Electron%20-%2347848F.svg?&style=for-the-badge&logo=Electron&logoColor=white"/>
+  <br/>
+- <img src="https://img.shields.io/badge/JavaScript%20-%23F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=white"/>
+  <br/>
+- <img src="https://img.shields.io/badge/TypeScript%20-%233178C6.svg?&style=for-the-badge&logo=TypeScript&logoColor=white"/> 
+  <br/>
+- <img src="https://img.shields.io/badge/HTML5%20-%23E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/>   
+  <br/>
+- <img src="https://img.shields.io/badge/CSS3%20-%231572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/>
+  <br/>
+- <img src="https://img.shields.io/badge/Sass%20-%23CC6699.svg?&style=for-the-badge&logo=Sass&logoColor=white"/>
+  <br/>
+- <img src="https://img.shields.io/badge/Node.js%20-%23339933.svg?&style=for-the-badge&logo=Node.js&logoColor=white"/> 
+  <br/>
+- <img src="https://img.shields.io/badge/Webpack%20-%238DD6F9.svg?&style=for-the-badge&logo=Webpack&logoColor=white"/>
+  <br/>
+- <img src="https://img.shields.io/badge/Prettier%20-%23F7B93E.svg?&style=for-the-badge&logo=Prettier&logoColor=white"/> 
+  <br/>
+- <img src="https://img.shields.io/badge/ESLint%20-%234B32C3.svg?&style=for-the-badge&logo=ESLint&logoColor=white"/>
+  <br/>
+- <img src="https://img.shields.io/badge/Airbnb%20-%23FF5A5F.svg?&style=for-the-badge&logo=Airbnb&logoColor=white"/>
 
 ## 🤝 Contributing
 
